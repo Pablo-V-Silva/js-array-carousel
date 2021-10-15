@@ -63,12 +63,30 @@ for (let i = 0; i < items.length; i++) {
 /* ordine frecce invertito per ordine di sequenza delle immagini da 0 a 5 */
 let counter = 0;
 
+const jumbo = `
+<div class = "position">
+  <img src="${items[counter]}">
+<div class = "absolute">
+  <h2>${title[counter]}</h2>
+  <p>${text[counter]}</p>
+</div>
+</div>
+`;
+selected.innerHTML = jumbo;
+
 downBtn.addEventListener('click', function () {
   ++counter;
   if (counter > items.length - 1) {
     counter = 0;
   }
-  const jumbo = `<img src="${items[counter]}">`;
+  const jumbo = `
+  <div class = "position">
+  <img src="${items[counter]}">
+<div class = "absolute">
+  <h2>${title[counter]}</h2>
+  <p>${text[counter]}</p>
+</div>
+</div>`;
   selected.innerHTML = jumbo;
 })
 
@@ -77,6 +95,13 @@ upBtn.addEventListener('click', function () {
     counter = items.length;
   }
   --counter;
-  const jumbo = `<img src="${items[counter]}">`;
+  const jumbo = `
+  <div class = "position">
+  <img src="${items[counter]}">
+<div class = "absolute">
+  <h2>${title[counter]}</h2>
+  <p>${text[counter]}</p>
+</div>
+</div>`;
   selected.innerHTML = jumbo;
 })
