@@ -3,3 +3,53 @@
   margin: 0;
   padding: 0;
 }
+
+/* Debug */
+.debug .container {
+  background-color: brown;
+  height: 500px;
+}
+
+.debug .selected {
+  background-color: cadetblue;
+  height: 100%;
+}
+
+.debug .carousel {
+  background-color: chocolate;
+  height: 100%;
+}
+
+.debug .buttons {
+  background-color: cornflowerblue;
+  height: 100%;
+}
+
+body {
+  background-color: bisque;
+}
+
+.container {
+  width: 80%;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.selected {
+  width: 65%;
+}
+
+.carousel {
+  width: 25%;
+}
+
+.buttons {
+  width: 10%;
+}
+
+img {
+  width: 100%;
+}
