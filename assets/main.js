@@ -18,12 +18,14 @@ STRUMENTI
 - if
 */
 
+/* DICHIARAZIONE DEGLI ELEMENTI DA INSERIRE NEL CAROSELLO */
+
 const items = [
   '../img/01.jpg',
-  '../img/02.jpg',
-  '../img/03.jpg',
-  '../img/04.jpg',
-  '../img/05.jpg'
+  'img/02.jpg',
+  'img/03.jpg',
+  'img/04.jpg',
+  'img/05.jpg'
 ];
 
 const title = [
@@ -42,6 +44,28 @@ const text = [
   'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
+/* DICHIARAZIONE DELLE COSTANTI CHE MI SERVIRANNO PER PROGRAMMARE GLI EVENTI DEL CAROSELLO */
 const selected = document.querySelector('.selected')
 const carousel = document.querySelector('.carousel')
-const buttons = document.querySelector('.buttons')
+const upBtn = document.querySelector('.upBtn')
+const downBtn = document.querySelector('.downBtn')
+
+let sweden = document.createElement("img")
+sweden.src = "../img/01.jpg"
+carousel.append(sweden)
+
+let swiss = document.createElement("img")
+swiss.src = "../img/02.jpg"
+carousel.append(swiss)
+
+let london = document.createElement("img")
+london.src = "../img/03.jpg"
+carousel.append(london)
+
+let germany = document.createElement("img")
+germany.src = "../img/04.jpg"
+carousel.append(germany)
+
+let paradis = document.createElement("img")
+paradis.src = "../img/05.jpg"
+carousel.append(paradis)
