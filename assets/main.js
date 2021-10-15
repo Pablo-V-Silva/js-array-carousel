@@ -22,11 +22,12 @@ STRUMENTI
 
 const items = [
   '../img/01.jpg',
-  'img/02.jpg',
-  'img/03.jpg',
-  'img/04.jpg',
-  'img/05.jpg'
+  '../img/02.jpg',
+  '../img/03.jpg',
+  '../img/04.jpg',
+  '../img/05.jpg'
 ];
+
 
 const title = [
   'Svezia',
@@ -45,27 +46,37 @@ const text = [
 ]
 
 /* DICHIARAZIONE DELLE COSTANTI CHE MI SERVIRANNO PER PROGRAMMARE GLI EVENTI DEL CAROSELLO */
-const selected = document.querySelector('.selected')
-const carousel = document.querySelector('.carousel')
-const upBtn = document.querySelector('.upBtn')
-const downBtn = document.querySelector('.downBtn')
+const selected = document.querySelector('.selected');
+const carousel = document.querySelector('.carousel');
+const upBtn = document.querySelector('.upBtn');
+const downBtn = document.querySelector('.downBtn');
 
-let sweden = document.createElement("img")
-sweden.src = "../img/01.jpg"
-carousel.append(sweden)
 
-let swiss = document.createElement("img")
-swiss.src = "../img/02.jpg"
-carousel.append(swiss)
+//dichiarazione degli elementi dentro ad items + stampa a schermo nel carousel
+for (let i = 0; i < items.length; i++) {
+  const imgBlock = `
+  <img class="img" src="${items[i]}">`;
+  carousel.innerHTML += imgBlock;
+}
 
-let london = document.createElement("img")
-london.src = "../img/03.jpg"
-carousel.append(london)
 
-let germany = document.createElement("img")
-germany.src = "../img/04.jpg"
-carousel.append(germany)
+/* ordine frecce invertito per ordine di sequenza delle immagini da 0 a 5 */
+let counter = 0;
 
-let paradis = document.createElement("img")
-paradis.src = "../img/05.jpg"
-carousel.append(paradis)
+downBtn.addEventListener('click', function () {
+  ++counter;
+  if (counter > items.length - 1) {
+    counter = 0;
+  }
+  const jumbo = `<img src="${items[counter]}">`;
+  selected.innerHTML = jumbo;
+})
+
+upBtn.addEventListener('click', function () {
+  if (counter == 0) {
+    counter = items.length;
+  }
+  --counter;
+  const jumbo = `<img src="${items[counter]}">`;
+  selected.innerHTML = jumbo;
+})

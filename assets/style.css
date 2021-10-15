@@ -31,6 +31,7 @@ body {
 
 .container {
   width: 80%;
+  height: 650px;
   display: flex;
   position: absolute;
   top: 50%;
@@ -55,10 +56,14 @@ body {
   align-items: center;
 }
 
-img {
+.img {
   width: 100%;
   height: calc(100% / 5);
-  display: block;
+}
+
+img {
+  width: 100%;
+
 }
 
 .upBtn, 
