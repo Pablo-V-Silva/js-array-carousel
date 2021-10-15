@@ -39,17 +39,28 @@ body {
 }
 
 .selected {
-  width: 65%;
+  width: 67%;
 }
 
 .carousel {
-  width: 25%;
+  width: 27%;
 }
 
 .buttons {
-  width: 10%;
+  width: 6%;
+  font-size: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 img {
   width: 100%;
+}
+
+.upBtn, 
+.downBtn {
+  cursor: pointer;
+  margin: 1rem 0;
 }

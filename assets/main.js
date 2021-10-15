@@ -42,6 +42,6 @@ const text = [
   'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
-console.log(items)
-console.log(title)
-console.log(text)
+const selected = document.querySelector('.selected')
+const carousel = document.querySelector('.carousel')
+const buttons = document.querySelector('.buttons')
