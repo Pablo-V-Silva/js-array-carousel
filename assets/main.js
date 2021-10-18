@@ -74,6 +74,15 @@ const jumbo = `
 `;
 selected.innerHTML = jumbo;
 
+let images = document.getElementsByClassName('img');
+
+for (let n = 0; n < images.length; n++) {
+  const element = images[n];
+  element.classList.add('obscure')
+}
+
+images[counter].classList.remove('obscure')
+images[counter].classList.add('border')
 
 downBtn.addEventListener('click', function () {
   ++counter;
@@ -91,10 +100,15 @@ downBtn.addEventListener('click', function () {
   selected.innerHTML = jumbo;
   console.log(document.getElementsByClassName('img'));
 
-  document.querySelector('img obscure').classList.remove('obscure')
-  document.getElementsByClassName('.img')[counter].classList.add('border')
-  console.log(counter);
+  let images = document.getElementsByClassName('img');
 
+  for (let n = 0; n < images.length; n++) {
+    const element = images[n];
+    element.classList.add('obscure')
+  }
+
+  images[counter].classList.remove('obscure')
+  images[counter].classList.add('border')
 })
 
 upBtn.addEventListener('click', function () {
@@ -111,4 +125,14 @@ upBtn.addEventListener('click', function () {
 </div>
 </div>`;
   selected.innerHTML = jumbo;
+
+  let images = document.getElementsByClassName('img');
+
+  for (let n = 0; n < images.length; n++) {
+    const element = images[n];
+    element.classList.add('obscure')
+  }
+
+  images[counter].classList.remove('obscure')
+  images[counter].classList.add('border')
 })
