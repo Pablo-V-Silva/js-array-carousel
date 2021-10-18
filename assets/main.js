@@ -50,18 +50,18 @@ const selected = document.querySelector('.selected');
 const carousel = document.querySelector('.carousel');
 const upBtn = document.querySelector('.upBtn');
 const downBtn = document.querySelector('.downBtn');
+let counter = 0;
 
 
 //dichiarazione degli elementi dentro ad items + stampa a schermo nel carousel
 for (let i = 0; i < items.length; i++) {
   const imgBlock = `
-  <img class="img" src="${items[i]}">`;
+  <img class="img obscure" src="${items[i]}">`;
   carousel.innerHTML += imgBlock;
 }
 
 
 /* ordine frecce invertito per ordine di sequenza delle immagini da 0 a 5 */
-let counter = 0;
 
 const jumbo = `
 <div class = "position">
@@ -74,6 +74,7 @@ const jumbo = `
 `;
 selected.innerHTML = jumbo;
 
+
 downBtn.addEventListener('click', function () {
   ++counter;
   if (counter > items.length - 1) {
@@ -82,12 +83,18 @@ downBtn.addEventListener('click', function () {
   const jumbo = `
   <div class = "position">
   <img src="${items[counter]}">
-<div class = "absolute">
+  <div class = "absolute">
   <h2>${title[counter]}</h2>
   <p>${text[counter]}</p>
-</div>
-</div>`;
+  </div>
+  </div>`;
   selected.innerHTML = jumbo;
+  console.log(document.getElementsByClassName('img'));
+
+  document.querySelector('img obscure').classList.remove('obscure')
+  document.getElementsByClassName('.img')[counter].classList.add('border')
+  console.log(counter);
+
 })
 
 upBtn.addEventListener('click', function () {
